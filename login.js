@@ -2,14 +2,14 @@ import {useState, useRef} from "react";
 import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 
 const Login = () => {
-  const [phoneNumber, stePhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [oneTimePassword, setOneTimePassword] = useState(null);
 
   return (
     <SafeAreaView>
       <TextInput
         style={styles.input}
-        onChangeText={oneTime}
+        onChangeText={setPhoneNumber}
         value={phoneNumber}
         placeHolder = "123-345-1111"
       />
