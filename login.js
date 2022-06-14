@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text,TouchableOpacity } from "react-native";
 
 const Login = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -11,16 +11,25 @@ const Login = () => {
         style={styles.input}
         onChangeText={setPhoneNumber}
         value={phoneNumber}
-        placeHolder = "123-345-1111"
+        placeholder = "123-345-1111"
+        placeholderTextColor = '#08120D'
       />
       <TextInput
         style={styles.input}
         onChangeText={setOneTimePassword}
         value={oneTimePassword}
         placeholder="1234"
+        placeholderTextColor = '#08120D'
         keyboardType="numeric"
         secureTextEntry = {true}
-      />
+        
+      /><TouchableOpacity
+      style={styles.button}
+      onPress={()=>{console.log('Loggin button ws clicked')}}
+      
+    >
+      <Text>Login</Text>
+    </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -34,7 +43,12 @@ const styles = StyleSheet.create({
   },
   margin:{
     marginTop:350
-  }
+    
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10}
 });
 
 export default Login; 
