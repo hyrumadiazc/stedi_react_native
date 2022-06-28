@@ -61,7 +61,7 @@ if (userLoggedIn){
 } else {
 
   return(
-    <Login/>
+    <Login setUserLoggedIn={setUserLoggedIn}/>
   )
 }
 }
